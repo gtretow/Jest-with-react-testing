@@ -16,10 +16,23 @@ describe("This suit is to test the Body component", () => {
   });
 
   test("finding title with TestId", () => {
+    //with the help of getByTestId, we can query what we passed to data-testid in our component.
     const { getByTestId } = render(<Body title="Jay Rocks" />);
     expect(getByTestId("header")).toHaveTextContent("Jay Roc");
 
     //exact match
     expect(getByTestId("header")).toHaveTextContent(/^Jay Rocks$/);
+  });
+
+  test("check Counter initial value", () => {
+    const { getByTestId } = render(<Body title="Jay Rocks" />);
+    expect(getByTestId("counter")).toHaveTextContent("0");
+  });
+
+  test("check Counter value after a tap", () => {
+    const { getByTestId } = render(<Body title="I Love Kavinie" />);
+    const button = getByTestId("button");
+    userEvent.click(button);
+    expect(getByTestId("counter")).toHaveTextContent("1");
   });
 });
