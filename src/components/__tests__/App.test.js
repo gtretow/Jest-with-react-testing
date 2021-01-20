@@ -6,3 +6,7 @@ test("renders learn react link", () => {
   const linkElement = getByText(/Aehoo/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+
+//fireEvent no RTL seria o Simulate do Jest
+//screen seria expect
