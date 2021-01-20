@@ -13,5 +13,11 @@ test("adds a new to-do", () => {
   fireEvent.keyDown(input, { key: "Enter" });
 
   screen.getByText(todo);
-  expect(input.value).toBe("");
+
+  //sem uso do jest-dom
+/*   expect(input.value).toBe(""); */
+
+//com jest-dom - expressões mais claras de se entender
+expect(input).toHaveValue("");
+
 });
