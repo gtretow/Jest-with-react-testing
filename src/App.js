@@ -5,7 +5,7 @@ import Body from "./components/Body";
 function App() {
   return (
     <div className="App">
-      <Body title="Learn React" />
+      <Body title="Aehoo" />
     </div>
   );
 }

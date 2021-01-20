@@ -35,4 +35,12 @@ describe("This suit is to test the Body component", () => {
     userEvent.click(button);
     expect(getByTestId("counter")).toHaveTextContent("1");
   });
+
+  test("check Counter value after tapping twice", () => {
+    const { getByTestId } = render(<Body title="I Love Kavinie" />);
+    const button = getByTestId("button");
+    userEvent.click(button);
+    userEvent.click(button);
+    expect(getByTestId("counter")).toHaveTextContent("2");
+  });
 });
